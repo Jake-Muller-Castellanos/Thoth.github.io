@@ -1,0 +1,29 @@
+#sample5 li {
+	position: relative;
+}
+#sample5 li:hover {
+	background: #deb3ba;
+}
+.sample5-tooltips {
+	display: block;
+	position: absolute;
+	bottom: -2.8em;
+	left: 0.3em;
+	z-index: 9999;
+	width: auto;
+	height: auto;
+	padding: 0.3em 0.5em;
+	color: #FFFFFF;
+	background: #c72439;
+	border-radius: 0.5em;
+}
+.sample5-tooltips:after {
+	width: 100%;
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0.5em;
+	top: -8px;
+	border-top:8px solid transparent;
+	border-left:8px solid #c72439;
+}

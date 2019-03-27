@@ -1,0 +1,559 @@
+/*全てのページあるいは特定のページに対する処理*/
+body {
+	margin:0px;          /* ページ全体のmargin */
+     	padding:0px;         /* ページ全体のpadding */
+	overflow: visible;	/*無駄な部分を隠す*/
+	width:100%;
+}
+
+p{
+	text-align: center;
+}
+
+/*ページ見出し*/
+h1{
+	text-align:center;
+}
+
+
+/*背景付きページの処理*/
+.bg_image{
+  background-size: cover;
+  background-image: url("../image/backphoto.jpg");
+  height:90%;
+}
+
+
+/*戻るボタン*/
+.square_btn {
+    position:relative;
+    top:-60px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #00BCD4;
+    background: #ECECEC;
+    border-radius: 0 15px 15px 0;
+    transition: .4s;
+  }
+
+.square_btn:hover {
+    background: #636363;
+}
+
+
+/*スライドショー　中央寄せ*/
+.slider img {
+	margin:auto;
+}
+
+
+
+
+/*リボン*/
+.ribbon_box {    
+    display: block;
+    position: relative;
+    margin: 15px auto;
+    padding: 10px 0;
+    width: 70%;
+    background: #f1f1f1;
+  }
+
+.ribbon {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 5px 0;
+    margin: 0 0 0 -20px;
+    width: calc(100% + 20px);
+    color: white;
+    background: #4682b4;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon h3{
+    vertical-align: middle;
+    margin: 0;
+    padding: 0 30px 0 15px;
+    border-top: dashed 1px #FFF;
+    border-bottom: dashed 1px #FFF;
+    font-size: 20px;
+    line-height: 46px;
+}
+
+.ribbon:after{
+    position: absolute;
+    content: '';
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 0px;
+    height: 0px;
+    border-width: 30px 15px 30px 0px;
+    border-color: transparent #f1f1f1 transparent transparent;
+    border-style: solid;
+}
+
+.ribbon:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px #6081b7;
+}
+
+
+
+
+/*診断履歴のリボン*/
+.ribbon_history_box {    
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 50%;
+    background: #f1f1f1;
+  }
+.ribbon_history {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    color: white;
+    background: #00bfff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+}
+.ribbon_history:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -7px;
+    border: none;
+    height: 38px;
+    width: 7px;
+    background: #70c7ff;
+    border-radius: 5px 0 0 5px;
+}
+.ribbon_history:after {
+    position: absolute;
+    content: '';
+    bottom: -7px;
+    left: -5px;
+    border: none;
+    height: 7px;
+    width: 5px;
+    background: #4d99ca;
+    border-radius: 5px 0 0 5px;
+}
+
+
+
+
+
+
+/*ラジオボタン*/
+.inputGroup {
+  display: inline-block;
+}
+
+
+
+
+.inputGroup label {
+  padding: 12px 30px;
+  width: 120%;
+  display: inline-block;
+  text-align: left;
+  color: #3C454C;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+
+#mask{
+	position:relative;
+	left:-17%
+}
+
+#mask2{
+	position:relative;
+	left:-8%
+}
+
+
+
+
+
+.inputGroup label:before {
+  width: 20px;
+  height: 10px;
+  /*border-radius: 100%;*/
+  content: '';
+  background-color: #5562eb;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+          transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+.inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: '';
+  border: 2px solid #D1D7DC;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.inputGroup input:checked ~ label {
+  color: #fff;
+}
+
+.inputGroup input:checked ~ label:before {
+  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+
+.inputGroup input:checked ~ label:after {
+  background-color: #54E0C7;
+  border-color: #54E0C7;
+}
+
+.inputGroup input {
+  /*width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;*/
+  visibility: hidden;
+}
+
+
+
+/*テーブル関連*/
+/*メイン画面のテーブル*/
+.mainTable{
+	width:80%;/*画面の最大幅に合わせる*/
+	margin:auto;/*中央寄せ*/
+	border:0px;/*テーブル周りに枠線をつける*/
+	white-space:nowrap;/*テーブル内の文字を改行しない*/
+}
+
+
+/*医療診断時のテーブル*/
+.medicalDiagnosisTable *, .medicalDiagnosisTable *:before, .medicalDiagnosisTable *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.medicalDiagnosisTable {
+	width: 80%;
+	border-collapse: collapse;
+}
+.medicalDiagnosisTable th, .medicalDiagnosisTable  td {
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #dddddd;
+}
+.medicalDiagnosisTable th {
+	width: 25%;
+	background: #f4f4f4;
+}
+
+/*医療クイズ時のテーブル*/
+.diseaseQuizTable *, .diseaseQuizTable *:before, .diseaseQuizTable *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.diseaseQuizTable {
+	width: 80%;
+	border-collapse: collapse;
+}
+.diseaseQuizTable th, .diseaseQuizTable  td {
+	padding: 10px;
+	text-align: left;
+	border: 1px solid #dddddd;
+}
+.diseaseQuizTable th {
+	width: 75%;
+	background: #f4f4f4;
+}
+
+
+
+/*医療クイズ結果時のテーブル*/
+.diseaseQuizOutputTable *, .diseaseQuizOutputTable *:before, .diseaseQuizOutputTable *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.diseaseQuizOutputTable {
+	width: 80%;
+	border-collapse: collapse;
+}
+.diseaseQuizOutputTable th, .diseaseQuizOutputTable  td {
+	padding: 10px;
+	text-align: left;
+	border: 1px solid #dddddd;
+}
+.diseaseQuizOutputTable th {
+	width: 70%;
+	background: #f4f4f4;
+}
+
+
+
+
+/*ファンシーボタン*/
+.fancy-btn{
+  display:inline-block;
+  position:relative;
+  margin:auto;
+  padding:10px 20px;
+  border:2px solid black;
+  color:black;
+  font-family:'Dancing Script',serif;
+  font-style:italic;
+  font-size:30px;
+  text-decoration:none;
+  margin:20px auto;
+  transition: color 0.4s
+}
+.fancy-btn:after{
+  content:" ";
+  border:2px solid rgba(0,0,0,0);
+  display:inline-block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  transition:all 0.4s;
+}
+.fancy-btn:hover{
+  color:#aaa
+}
+.fancy-btn:hover:after{  
+  border:2px solid black;
+  width: calc(100% - 10px);
+  height: calc(100% + 10px);
+}
+
+
+
+
+/*バブリーボタン*/
+.bubbly-button {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #00bfff;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(0, 0, 130, 0.5);
+}
+.bubbly-button:hover {
+    background: #63b3ff;
+}
+.bubbly-button:focus {
+  outline: 0;
+}
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, transparent 20%, #00bfff 20%, transparent 30%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, transparent 10%, #00bfff 15%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, transparent 10%, #00bfff 15%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%), radial-gradient(circle, #00bfff 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #1e90ff;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*タイトル画面のボタン関連*/
+
+.titlebutton {
+  display: inline-block;
+  width: 250px;
+  height: 54px;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0px;
+  color: #000000;
+  line-height: 50px;
+  outline: none;
+}
+
+.titlebutton::before,
+.titlebutton::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+
+.titlebutton:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.titlebutton,
+.titlebutton::before,
+.titlebutton::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+
+
+/*Windowの横幅が狭くなった時の処理*/
+@media only screen and (max-width:610px) {
+	.square_btn {
+ 	   	position:relative;
+   		top:-10px;
+   		display: inline-block;
+    		font-weight: bold;
+    		padding: 0.25em 0.5em;
+    		text-decoration: none;
+    		color: #00BCD4;
+    		background: #ECECEC;
+    		border-radius: 0 15px 15px 0;
+    		transition: .4s;
+  }	
+}
+@media only screen and (max-width:480px) {
+	.medicalDiagnosisTable {
+		margin: 0;
+	}
+	.medicalDiagnosisTable th, .medicalDiagnosisTable td {
+		width: 125%;
+		display: block;
+		border-top: none;
+	}
+	.medicalDiagnosisTable tr:first-child th {
+		border-top: 1px solid #dddddd;
+	}
+	.square_btn {
+ 	   	position:relative;
+   		top:10px;
+   		display: inline-block;
+    		font-weight: bold;
+    		padding: 0.25em 0.5em;
+    		text-decoration: none;
+    		color: #00BCD4;
+    		background: #ECECEC;
+    		border-radius: 0 15px 15px 0;
+    		transition: .4s;
+  }	
+}
+
+
+
+
+
+

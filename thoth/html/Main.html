@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+		<!--スライドショーに使用するJQuery-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+		<script type="text/javascript">
+   		     	$(document).ready(function(){
+            			$('.slider').bxSlider({
+                			auto: true,
+                			pause: 5000,
+            			});
+        		});
+		</script>
+
+		
+
+	</head>
+	<title>thoth</title>
+	<body>
+		<iframe src="MenuBar.html" frameborder="0" width="100%" style="margin:5px 0px;"></iframe>
+		<!--スライドショー-->
+		<div class="slider">
+			<a href="Main.html">
+				<img src="../image/thothBoy.jpg" width:"100%" height="300" alt="">
+			</a>
+			<a href="Main.html">
+				<img src="../image/アフィリエイト広告募集.jpg" width:"100%" height="300" alt="">
+			</a>
+			<a href="Main.html">
+				<img src="../image/アフィリエイト広告募集.jpg" width:"100%" height="300" alt="">
+			</a>
+		</div>
+
+
+
+
+
+
+
+
+
+		<!--テーブル　※画面をとても小さくすると自動で改行される…-->
+		<div class="mainTable"><table align="center" width="100%"><tbody>
+		<tr align="center">
+			<td><!--医療診断-->
+				<a href="MedicalDiagnosis_input.html" class="fancy-btn">医療診断</a>
+			</td>
+			
+			<td><!--医療クイズ-->
+				<a href="DiseaseQuiz_start.html" class="fancy-btn">医療クイズ</a>
+			</td>
+		</tr>
+
+		<tr align="center">
+			<td><!--診断履歴-->
+				<a href="DiagnosisHistory.html" class="fancy-btn">診断履歴</a>
+			</td>
+		
+			<td><!--病気一覧-->
+				<a href="DiseaseList.html" class="fancy-btn">病気一覧</a>
+			</td>
+		</tr>
+
+		</tbody></table></div>
+		<iframe src="Footer.html" frameborder="0" width="100%" height="85px" style="position:relative; top:40px;"></iframe>
+	</body>
+</html>

@@ -1,0 +1,124 @@
+/*全てのページあるいは特定のページに対する処理*/
+body {
+	margin:0px;          /* ページ全体のmargin */
+	overflow: hidden;	//無駄な部分を隠す
+}
+
+/*背景付きページの処理*/
+.bg_image{
+  background-size: cover;
+  background-image: url("../image/backphoto.jpg");
+  height:90%;
+}
+
+
+/*本体の処理*/
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+}
+
+/*メインの部分の処理*/
+.discrive{
+	position:relative;
+	top:28%;
+}
+
+/*戻るボタン*/
+.square_btn {
+    position:relative;
+    top:10px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #00BCD4;
+    background: #ECECEC;
+    border-radius: 0 15px 15px 0;
+    transition: .4s;
+  }
+
+.square_btn:hover {
+    background: #636363;
+}
+
+
+
+
+/*回転式ボタンコード*/
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s all ease;
+}
+a:hover {
+  color: #B15947;
+}
+a:focus {
+  text-decoration: none;
+}
+
+.flex {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bttn {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+}
+.bttn:after {
+  transition: 0.3s all ease;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 3px;
+  border: 3px solid #B15947;
+}
+.bttn:before {
+  content: '';
+  position: absolute;
+  border-radius: 3px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.bttn:hover:after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.bttn:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.bttn:active:before {
+  background-color: #f1481b;
+}
+.bttn:active:after {
+  border-color: #f1481b;
+}
